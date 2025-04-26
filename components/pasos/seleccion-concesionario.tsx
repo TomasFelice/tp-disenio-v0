@@ -233,13 +233,9 @@ export default function SeleccionConcesionario({ formData, actualizarFormData }:
               <div className="w-4 h-4 rounded-full bg-green-100"></div>
               <span className="text-sm text-green-800">Días con disponibilidad</span>
             </div>
-            <div className="flex items-center space-x-2 mb-2">
-              <div className="w-4 h-4 rounded-full bg-red-100"></div>
-              <span className="text-sm text-red-800">Días sin disponibilidad</span>
-            </div>
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 rounded-full bg-gray-200"></div>
-              <span className="text-sm text-gray-500">Días pasados o fin de semana</span>
+              <span className="text-sm text-gray-500">Días pasados, fin de semana o sin disponibilidad</span>
             </div>
           </div>
 

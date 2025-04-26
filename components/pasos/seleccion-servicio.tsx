@@ -30,22 +30,22 @@ const preciosServicios = [
 
 // Opciones de kilometraje para el select
 const opcionesKilometraje = [
-  { value: "1001", label: "1.001 km" },
-  { value: "10000", label: "10.000 km" },
-  { value: "20000", label: "20.000 km" },
-  { value: "30000", label: "30.000 km" },
-  { value: "40000", label: "40.000 km" },
-  { value: "50000", label: "50.000 km" },
-  { value: "60000", label: "60.000 km" },
-  { value: "70000", label: "70.000 km" },
-  { value: "80000", label: "80.000 km" },
-  { value: "90000", label: "90.000 km" },
-  { value: "100000", label: "100.000 km" },
-  { value: "110000", label: "110.000 km" },
-  { value: "120000", label: "120.000 km" },
-  { value: "130000", label: "130.000 km" },
-  { value: "140000", label: "140.000 km" },
-  { value: "150000", label: "150.000 km" },
+  { value: "1000", label: "< 1.000 km" },
+  { value: "10000", label: "< 10.000 km" },
+  { value: "20000", label: "< 20.000 km" },
+  { value: "30000", label: "< 30.000 km" },
+  { value: "40000", label: "< 40.000 km" },
+  { value: "50000", label: "< 50.000 km" },
+  { value: "60000", label: "< 60.000 km" },
+  { value: "70000", label: "< 70.000 km" },
+  { value: "80000", label: "< 80.000 km" },
+  { value: "90000", label: "< 90.000 km" },
+  { value: "100000", label: "< 100.000 km" },
+  { value: "110000", label: "< 110.000 km" },
+  { value: "120000", label: "< 120.000 km" },
+  { value: "130000", label: "< 130.000 km" },
+  { value: "140000", label: "< 140.000 km" },
+  { value: "150000", label: "< 150.000 km" },
 ]
 
 export default function SeleccionServicio({ formData, actualizarFormData }: SeleccionServicioProps) {
