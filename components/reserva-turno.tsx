@@ -59,7 +59,7 @@ export type FormData = {
 }
 
 const pasos = [
-  "Identificación del Cliente",
+  "Datos del Cliente",
   "Selección del Vehículo",
   "Selección del Servicio",
   "Selección del Concesionario",
@@ -68,27 +68,37 @@ const pasos = [
   "Confirmación",
 ]
 
+// Datos de muestra del cliente
+const clienteMuestra = {
+  tipoDocumento: "CUIT",
+  numeroDocumento: "30-71234567-9",
+  razonSocial: "Empresa de Transportes S.A.",
+  nombreCompleto: "Juan Carlos Pérez",
+  email: "contacto@transportes.com.ar",
+  telefono: "11-4567-8901",
+  domicilio: "Av. Corrientes 1234, CABA, Buenos Aires",
+}
+
 export default function ReservaTurno() {
   const router = useRouter()
   const [pasoActual, setPasoActual] = useState(0)
+  // Inicializar el estado con los datos de muestra
   const [formData, setFormData] = useState<FormData>({
-    tipoDocumento: "DNI",
-    numeroDocumento: "",
-    razonSocial: "",
-    nombreCompleto: "",
-    email: "",
-    telefono: "",
-    domicilio: "",
+    // Cliente - datos precargados
+    tipoDocumento: clienteMuestra.tipoDocumento,
+    numeroDocumento: clienteMuestra.numeroDocumento,
+    razonSocial: clienteMuestra.razonSocial,
+    nombreCompleto: clienteMuestra.nombreCompleto,
+    email: clienteMuestra.email,
+    telefono: clienteMuestra.telefono,
+    domicilio: clienteMuestra.domicilio,
 
+    // Resto de datos iniciales
     vehiculos: [],
-
     concesionario: "",
-    ubicacionActual: "",
+    ubicacionActual: clienteMuestra.domicilio,
     ubicacionSeleccionada: "",
-
     medioPago: "Cuenta Corriente",
-
-    // Add these missing properties that might be used in inputs
     duenioRetira: true,
     nombreRetiro: "",
     apellidoRetiro: "",
@@ -223,16 +233,16 @@ export default function ReservaTurno() {
                 setCompletado(false)
                 setPasoActual(0)
                 setFormData({
-                  tipoDocumento: "DNI",
-                  numeroDocumento: "",
-                  razonSocial: "",
-                  nombreCompleto: "",
-                  email: "",
-                  telefono: "",
-                  domicilio: "",
+                  tipoDocumento: clienteMuestra.tipoDocumento,
+                  numeroDocumento: clienteMuestra.numeroDocumento,
+                  razonSocial: clienteMuestra.razonSocial,
+                  nombreCompleto: clienteMuestra.nombreCompleto,
+                  email: clienteMuestra.email,
+                  telefono: clienteMuestra.telefono,
+                  domicilio: clienteMuestra.domicilio,
                   vehiculos: [],
                   concesionario: "",
-                  ubicacionActual: "",
+                  ubicacionActual: clienteMuestra.domicilio,
                   ubicacionSeleccionada: "",
                   medioPago: "Cuenta Corriente",
                   duenioRetira: true,

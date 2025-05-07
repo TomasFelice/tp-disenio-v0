@@ -3,17 +3,36 @@
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Car, Calendar, ClipboardList, Settings, LogOut, User, Bell } from "lucide-react"
+import { Car, Calendar, ClipboardList, Settings, LogOut, User, Bell, PlusCircle } from "lucide-react"
+import { useState } from "react"
+import { NoVehiculosModal } from "@/components/modals/no-vehiculos-modal"
+import { useVehiculos } from "@/hooks/use-vehiculos"
 
 export default function DashboardHome() {
   const router = useRouter()
+  const { vehiculos, isLoading } = useVehiculos()
+  const [showNoVehiculosModal, setShowNoVehiculosModal] = useState(false)
+
+  const handleServicioClick = () => {
+    if (vehiculos.length === 0) {
+      setShowNoVehiculosModal(true)
+    } else {
+      router.push("/reserva-turno")
+    }
+  }
 
   const menuItems = [
     {
       title: "Servicio por km/mantenimiento",
       description: "Reserva un turno para el mantenimiento de tu vehículo",
       icon: <Car className="h-10 w-10 text-[#004aad]" />,
-      action: () => router.push("/reserva-turno"),
+      action: handleServicioClick,
+    },
+    {
+      title: "Registrar vehículo",
+      description: "Añade un nuevo vehículo a tu cuenta",
+      icon: <PlusCircle className="h-10 w-10 text-[#004aad]" />,
+      action: () => router.push("/registrar-vehiculo"),
     },
     {
       title: "Mis turnos",
@@ -75,6 +94,8 @@ export default function DashboardHome() {
           </Card>
         ))}
       </div>
+
+      <NoVehiculosModal open={showNoVehiculosModal} onOpenChange={setShowNoVehiculosModal} />
     </div>
   )
 }

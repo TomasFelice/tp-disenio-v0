@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Reserva de Turnos - Servicio por km/mantenimiento",
   description: "Sistema de reserva de turnos para servicio por km/mantenimiento",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
